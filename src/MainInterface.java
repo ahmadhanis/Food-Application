@@ -282,7 +282,6 @@ int row,col;
         int dialogButton = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Delete this data", "Delete", dialogButton);
         if(dialogResult == 0) {
-            dtm.removeRow(row);
             foodlist.remove(row);
            
             clearField();

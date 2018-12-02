@@ -58,6 +58,11 @@ String username,password;
         });
 
         jButton2.setText("Cancel");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -132,12 +137,17 @@ String username,password;
        }       
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     private void loadPassword(){
           try {
             File file = new File("pass.txt"); //create file
             file.createNewFile();//if not exit
             FileReader f = new FileReader("pass.txt");
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
             while (f.ready()) {
                 char c = (char) f.read();
                     if (c == '-') {
@@ -151,7 +161,6 @@ String username,password;
                     }
             }
         }catch(IOException e){
-            return;
         }
     }
     /**
